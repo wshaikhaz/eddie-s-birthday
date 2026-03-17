@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Envelope from "./Envelope";
+import { playOpenSound } from "@/lib/sounds";
 
 interface EnvelopeSceneProps {
   onComplete: () => void;
@@ -11,6 +12,7 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
 
   const handleClick = () => {
     if (phase !== "sealed") return;
+    playOpenSound();
     setPhase("opening");
     setTimeout(() => setPhase("letter"), 800);
   };
