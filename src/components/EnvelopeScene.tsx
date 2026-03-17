@@ -7,8 +7,6 @@ interface EnvelopeSceneProps {
   onComplete: () => void;
 }
 
-const audio = new Audio("/song.mp3");
-
 const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
   const [phase, setPhase] = useState<"sealed" | "opening" | "letter" | "done">(
     "sealed"
@@ -16,6 +14,7 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
 
   const handleClick = () => {
     if (phase !== "sealed") return;
+    const audio = new Audio("/song.mp3");
     audio.play();
     setPhase("opening");
     setTimeout(() => setPhase("letter"), 800);
