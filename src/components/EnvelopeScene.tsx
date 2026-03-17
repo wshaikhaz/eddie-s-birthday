@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Envelope from "./Envelope";
+import { playOpenSound } from "@/lib/sounds";
 
 interface EnvelopeSceneProps {
   onComplete: () => void;
