@@ -8,12 +8,41 @@ interface Wish {
 }
 
 const initialWishes: Wish[] = [
-  { id: 1, name: "Sarah", message: "Happy birthday Eddie! You make every room brighter just by being in it. 🌟" },
-  { id: 2, name: "Marcus", message: "Cheers to another year of amazing adventures together, buddy!" },
-  { id: 3, name: "Lily", message: "Wishing you all the happiness your heart can hold. You deserve it all! 💛" },
-  { id: 4, name: "James", message: "Remember that road trip last summer? Here's to a hundred more. Happy birthday!" },
-  { id: 5, name: "Priya", message: "The world is a better place because you're in it. Celebrate big today! 🎉" },
-  { id: 6, name: "Tom", message: "Happy birthday to the best friend anyone could ask for. Love you, man!" },
+  {
+    id: 1,
+    name: "Arleen",
+    message:
+      "Happy birthday Eddie! For 10 years and more, you’ve always been there—listening, understanding, and never judging. Thank you for being my constant and my safe place. 💛"
+  },
+  {
+    id: 2,
+    name: "Rhenee",
+    message:
+      "Happy birthday! Ang dami na nating tawanan at hangouts na hindi ko makakalimutan. I’m so grateful for all the fun moments we share—here’s to many more!"
+  },
+  {
+    id: 3,
+    name: "Obaid",
+    message:
+      "Happy birthday, my love. You are my home, my peace, and my greatest blessing. Thank you for filling my life with love, laughter, and meaning. I’m so lucky to have you. 💛"
+  },
+  {
+    id: 4,
+    name: "Mama",
+    message:
+      "Happy birthday, Eddle. Sobrang saya ko na napunta ka sa pamilya namin. Mahal na mahal ka namin."
+  },
+  {
+    id: 5,
+    name: "Mani",
+    message:
+      "Happy birthday! Sa lahat ng late-night inuman at movie nights natin, ikaw talaga yung kasama na hindi nakakasawa. Cheers to more kwentuhan, tawanan, at good times! 🍻"
+  },
+  {
+    id: 6,
+    name: "Keka",
+    message: "Happy birthday to the best sister in law anyone could ask for!"
+  }
 ];
 
 const WishWall = () => {
@@ -26,7 +55,10 @@ const WishWall = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
-    setWishes((prev) => [{ id: Date.now(), name: name.trim(), message: message.trim() }, ...prev]);
+    setWishes((prev) => [
+      { id: Date.now(), name: name.trim(), message: message.trim() },
+      ...prev
+    ]);
     setName("");
     setMessage("");
   };
@@ -40,14 +72,14 @@ const WishWall = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-cursive text-gold text-lg mb-2">Leave a Wish</p>
+          <p className="font-cursive text-gold text-lg mb-2">From Us to You</p>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
             Birthday Wishes
           </h2>
         </motion.div>
 
         {/* Form */}
-        <motion.form
+        {/* <motion.form
           onSubmit={handleSubmit}
           className="max-w-lg mx-auto mb-16 space-y-4"
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +106,7 @@ const WishWall = () => {
           >
             Send Your Wish ✨
           </button>
-        </motion.form>
+        </motion.form> */}
 
         {/* Wish cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -87,7 +119,9 @@ const WishWall = () => {
               transition={{ delay: 0.1 * Math.min(i, 6), duration: 0.5 }}
               whileHover={{ scale: 1.02, rotate: 1 }}
             >
-              <p className="font-sans text-foreground/80 leading-relaxed mb-3">"{wish.message}"</p>
+              <p className="font-sans text-foreground/80 leading-relaxed mb-3">
+                "{wish.message}"
+              </p>
               <p className="font-cursive text-gold text-sm">— {wish.name}</p>
             </motion.div>
           ))}

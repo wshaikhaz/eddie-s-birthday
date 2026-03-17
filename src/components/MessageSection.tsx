@@ -13,40 +13,47 @@ const MessageSection = () => {
         style={{
           backgroundImage: "url('/paper-texture.png')",
           backgroundSize: "400px",
-          backgroundBlendMode: "overlay",
+          backgroundBlendMode: "overlay"
         }}
         initial={{ opacity: 0, y: 40 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7 }}
       >
-        <p className="font-cursive text-gold text-lg mb-4">A Message From Us</p>
+        <p className="font-cursive text-gold text-lg mb-4">
+          A Message From Keka
+        </p>
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-8">
           Dear Eddie,
         </h2>
-        
+
         <div className="space-y-5 font-sans text-muted-foreground leading-relaxed">
           <p>
-            It's hard to put into words how much you mean to all of us. From the moment you walk into a room, 
-            you bring this incredible energy — a warmth that makes everyone feel at home.
+            Ang hirap ilagay sa salita kung gaano ka kahalaga sa amin. Sa tuwing
+            dumarating ka, may dala kang kakaibang saya at warmth — yung tipong
+            napaparamdam mo sa lahat na parang nasa bahay lang sila.
           </p>
           <p>
-            This year has been filled with so many amazing moments together: the spontaneous road trips, 
-            the late-night conversations, the belly laughs over the silliest things. 
-            Each memory is a treasure, and we're so grateful to share them with you.
+            Ang daming magagandang moments nitong taon: yung mga biglaang lakad,
+            kwentuhan hanggang gabi, at tawanan kahit sa pinaka simpleng bagay.
+            Lahat ng alaala na ‘yon, sobrang special, at sobrang thankful kami
+            na nakakasama ka namin sa mga ‘yon.
           </p>
           <p>
-            As you step into this new year of your life, know that you are surrounded by people who love you deeply, 
-            believe in you completely, and will always be in your corner.
+            Sa pagpasok mo sa panibagong taon ng buhay mo, tandaan mo na
+            napapaligiran ka ng mga taong mahal ka, naniniwala sa’yo, at laging
+            nandito para sa’yo kahit ano pa mangyari.
           </p>
           <p className="font-display text-foreground text-lg italic">
-            Here's to you, Eddie — to another year of chasing dreams, making memories, and being the incredible 
-            person you are. 🥂
+            Para sa’yo, Eddie — sa mas marami pang pangarap na matutupad, alaala
+            na mabubuo, at sa patuloy mong pagiging kahanga-hangang tao. 🥂
           </p>
         </div>
 
         <div className="mt-8 pt-6 border-t border-border">
-          <p className="font-cursive text-gold text-lg">With all our love,</p>
-          <p className="font-sans text-muted-foreground mt-1">Your Friends & Family ❤️</p>
+          <p className="font-cursive text-gold text-lg">Mahal ka namin,</p>
+          <p className="font-sans text-muted-foreground mt-1">
+            Mula sa iyong pamilya at mga kaibigan ❤️
+          </p>
         </div>
       </motion.div>
     </section>

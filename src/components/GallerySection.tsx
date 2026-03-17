@@ -8,12 +8,24 @@ import memory5 from "@/assets/memory-5.jpg";
 import memory6 from "@/assets/memory-6.jpg";
 
 const memories = [
-  { src: memory1, caption: "Summer at the beach — pure joy", span: "col-span-2" },
-  { src: memory2, caption: "That unforgettable dinner night", span: "row-span-2" },
-  { src: memory3, caption: "Adventures on the mountain trail", span: "" },
-  { src: memory4, caption: "Game nights that never get old", span: "" },
-  { src: memory5, caption: "New Year's we'll never forget", span: "row-span-2" },
-  { src: memory6, caption: "Rooftop evenings with the crew", span: "col-span-2" },
+  { src: memory1, caption: "Where is this?", span: "col-span-2" },
+  {
+    src: memory2,
+    caption: "No comment",
+    span: "row-span-2"
+  },
+  { src: memory3, caption: "I miss Olla", span: "" },
+  { src: memory4, caption: "Hahah sorry", span: "" },
+  {
+    src: memory5,
+    caption: "Happy Birthday, Eddie! 🎂",
+    span: "row-span-2"
+  },
+  {
+    src: memory6,
+    caption: "I don't know what to type",
+    span: "col-span-2"
+  }
 ];
 
 const GallerySection = () => {
@@ -52,7 +64,9 @@ const GallerySection = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="font-sans text-sm text-primary-foreground">{mem.caption}</p>
+                <p className="font-sans text-sm text-primary-foreground">
+                  {mem.caption}
+                </p>
               </div>
               <div className="absolute inset-0 border border-foreground/5 rounded-lg pointer-events-none" />
             </motion.div>

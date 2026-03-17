@@ -10,8 +10,10 @@ const Index = () => {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
 
   return (
-    <div className="bg-paper min-h-screen" style={{ backgroundImage: "url('/paper-texture.png')", backgroundSize: "400px", backgroundBlendMode: "overlay" }}>
-      {!envelopeOpen && <EnvelopeScene onComplete={() => setEnvelopeOpen(true)} />}
+    <div className="bg-background min-h-screen">
+      {!envelopeOpen && (
+        <EnvelopeScene onComplete={() => setEnvelopeOpen(true)} />
+      )}
       {envelopeOpen && (
         <>
           <HeroSection />

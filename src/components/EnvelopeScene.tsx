@@ -7,12 +7,16 @@ interface EnvelopeSceneProps {
   onComplete: () => void;
 }
 
+const audio = new Audio("/public/song.mp3");
+
 const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
-  const [phase, setPhase] = useState<"sealed" | "opening" | "letter" | "done">("sealed");
+  const [phase, setPhase] = useState<"sealed" | "opening" | "letter" | "done">(
+    "sealed"
+  );
 
   const handleClick = () => {
     if (phase !== "sealed") return;
-    playOpenSound();
+    audio.play();
     setPhase("opening");
     setTimeout(() => setPhase("letter"), 800);
   };
@@ -27,7 +31,11 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
       {phase !== "done" && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center bg-paper"
-          style={{ backgroundImage: "url('/paper-texture.png')", backgroundSize: "400px", backgroundBlendMode: "overlay" }}
+          style={{
+            backgroundImage: "url('/paper-texture.png')",
+            backgroundSize: "400px",
+            backgroundBlendMode: "overlay"
+          }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
         >
@@ -68,19 +76,21 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
                   style={{
                     backgroundImage: "url('/paper-texture.png')",
                     backgroundSize: "400px",
-                    backgroundBlendMode: "overlay",
+                    backgroundBlendMode: "overlay"
                   }}
                 >
                   {/* Gold border accent */}
                   <div className="absolute inset-0 rounded-lg border-2 border-gold/20 pointer-events-none" />
-                  
+
                   <div className="text-center space-y-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.6 }}
                     >
-                      <p className="font-cursive text-gold text-lg mb-2">A Special Letter</p>
+                      <p className="font-cursive text-gold text-lg mb-2">
+                        A Special Letter
+                      </p>
                       <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight text-balance">
                         Happy Birthday, Eddie! 🎂
                       </h2>
@@ -93,12 +103,14 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
                       className="space-y-4"
                     >
                       <p className="font-sans text-muted-foreground leading-relaxed">
-                        Today is your day — a day to celebrate all the incredible moments, 
-                        the laughter, the adventures, and the beautiful person you are.
+                        Ngayong araw ay para sa’yo — isang araw para i-celebrate
+                        lahat ng masasayang alaala, tawanan, mga pinagdaanan, at
+                        kung gaano ka ka-special na tao.
                       </p>
                       <p className="font-sans text-muted-foreground leading-relaxed">
-                        We've put together something special just for you. 
-                        Scroll down to see the memories, messages, and love from everyone who cares about you.
+                        May inihanda kami para sa’yo na galing sa puso. Scroll
+                        mo lang para makita mo yung mga memories, messages, at
+                        pagmamahal mula sa lahat ng nagmamahal sa’yo. 💛
                       </p>
                     </motion.div>
 
@@ -111,7 +123,7 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
                         onClick={handleContinue}
                         className="mt-4 font-sans text-sm tracking-wide text-gold border-b-2 border-gold/40 hover:border-gold pb-1 transition-colors duration-300"
                       >
-                        Continue to Celebration →
+                        Continue to the Surprise →
                       </button>
                     </motion.div>
                   </div>

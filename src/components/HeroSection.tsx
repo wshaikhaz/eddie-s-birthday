@@ -12,7 +12,7 @@ const HeroSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <p className="font-cursive text-gold text-xl mb-4">March 18, 2025</p>
+        <p className="font-cursive text-gold text-xl mb-4">March 18, 2026</p>
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-foreground tracking-tight text-balance leading-tight">
           Happy Birthday, Eddie! 🎂
         </h1>
@@ -24,8 +24,9 @@ const HeroSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        A day to celebrate a lifetime of incredible moments, 
-        unforgettable adventures, and the wonderful soul that you are.
+        Isang araw para i-celebrate ang buong buhay ng masasayang alaala, hindi
+        malilimutang adventures, at kung gaano kaganda ang puso mo bilang tao.
+        💛 HAHAHA This is so funny
       </motion.p>
 
       <motion.div
@@ -35,7 +36,9 @@ const HeroSection = () => (
         transition={{ delay: 0.6, duration: 0.8 }}
       >
         {["🎉", "🥂", "🎁", "✨", "🎈"].map((emoji, i) => (
-          <span key={i} className="text-2xl">{emoji}</span>
+          <span key={i} className="text-2xl">
+            {emoji}
+          </span>
         ))}
       </motion.div>
     </div>
