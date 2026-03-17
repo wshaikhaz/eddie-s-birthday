@@ -12,6 +12,7 @@ const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
 
   const handleClick = () => {
     if (phase !== "sealed") return;
+    playOpenSound();
     setPhase("opening");
     setTimeout(() => setPhase("letter"), 800);
   };
