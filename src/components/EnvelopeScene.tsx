@@ -7,7 +7,7 @@ interface EnvelopeSceneProps {
   onComplete: () => void;
 }
 
-const audio = new Audio("/public/song.mp3");
+const audio = new Audio("/song.mp3");
 
 const EnvelopeScene = ({ onComplete }: EnvelopeSceneProps) => {
   const [phase, setPhase] = useState<"sealed" | "opening" | "letter" | "done">(
